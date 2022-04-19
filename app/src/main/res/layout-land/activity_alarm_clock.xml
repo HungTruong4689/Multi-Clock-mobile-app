@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BA96F8"
+    tools:context=".AlarmClock">
+
+    <TextView
+        android:id="@+id/textViewhour"
+        android:layout_width="77dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="40dp"
+        android:text="00"
+        android:textColor="#092AE1"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewMinute"
+        android:layout_width="77dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="172dp"
+        android:text="00"
+        android:textColor="#092AE1"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="16dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:text=":"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewMinute"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toEndOf="@+id/textViewhour"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewshowMode"
+        android:layout_width="229dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:text="TIMER MODE"
+        android:textColor="#092AE1"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/buttonMode"
+        android:layout_width="182dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/ic_mode"
+        android:onClick="changeMode"
+        android:text="Mode"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonchooseAlarm"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/buttonchooseAlarm"
+        android:layout_width="183dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/ic_choose"
+        android:onClick="chooseAlarm"
+        android:text="Choose Alarm"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/setAlarmMode"
+        android:layout_width="155dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/ic_edit"
+        android:onClick="setAlarm"
+        android:text="Set Alarm"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonchooseAlarm" />
+
+    <ImageButton
+        android:id="@+id/fastDown"
+        android:layout_width="69dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_down"
+        android:onClick="hourdown"
+        app:layout_constraintBottom_toTopOf="@+id/setAlarmMode"
+        app:layout_constraintStart_toEndOf="@+id/buttonMode"
+
+        />
+
+    <ImageButton
+        android:id="@+id/Down"
+        android:layout_width="69dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_down"
+        android:onClick="minutedown"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Up" />
+
+    <ImageButton
+        android:id="@+id/Up"
+        android:layout_width="69dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_up"
+        android:onClick="minuteup"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/fastUp" />
+
+    <ImageButton
+        android:id="@+id/fastUp"
+        android:layout_width="69dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ic_up"
+        android:onClick="hourup"
+        app:layout_constraintBottom_toTopOf="@+id/setAlarmMode"
+        app:layout_constraintStart_toEndOf="@+id/fastDown" />
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="151dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/ic_snooze"
+        android:onClick="snoozingalarm"
+        android:text="Snooze"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/setAlarmMode" />
+</androidx.constraintlayout.widget.ConstraintLayout>

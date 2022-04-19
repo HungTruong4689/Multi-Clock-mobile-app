@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Multi-Clock</string>
+    <string name="area_name">Please input Area</string>
+    <string name="city_name">Please input the City</string>
+</resources>
